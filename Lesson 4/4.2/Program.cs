@@ -1,5 +1,5 @@
-﻿// Задайте одномерный массив, заполненный случайными числами.
-// Определите количество простых чисел в этом массиве.
+﻿// Задайте массив из N натуральных чисел (N вводится с клавиатуры).
+// Найдите количество чисел, которые оканчиваются на 1 и делятся нацело на 7.
 
 void Print(int[] arr)
 {
@@ -7,7 +7,7 @@ void Print(int[] arr)
 
     for (int i = 0; i < size; i++)
     {
-        Console.Write($"{arr[i]} ");        
+        Console.Write($"{arr[i]} ");
     }
     Console.WriteLine();
 }
@@ -23,31 +23,33 @@ int[] MassNums(int size, int from, int to)
     return arr;
 }
 
-bool isPrime(int number)
+void SelectionSort(int[] array)
 {
-    if (number < 2)
-        return false;
-    
-    for (int i = 2; i <= Math.Sqrt(number); i++)
+    for(int i = 0; i < array.Length - 1; i++)
     {
-        if (number % i == 0)
-            return false;
+        int minPosition = i;
+        for(int j = i + 1; j < array.Length; j++)
+        {
+            if(array[j] < array[minPosition])
+                minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
     }
-    return true;
 }
 
-int SimpleNum(int[] arr)
+int CountNum(int[] arr)
 {
     int count = 0;
 
     foreach (int number in arr)
     {
-        if (isPrime(number))
+        if (number % 10 == 1 && number % 7 == 0)
             count++;
     }
     return count;
 }
-
 
 Console.WriteLine("Введите размер массива");
 int num = int.Parse(Console.ReadLine()!);
@@ -60,7 +62,12 @@ int[] mass = MassNums(num, start, stop);
 Console.WriteLine();
 Console.WriteLine($"Ваш массив размером: {num} чисел. От: {start} до: {stop}");
 Console.WriteLine();
+SelectionSort(mass);
 Print(mass);
 
-int result = SimpleNum(mass);
-Console.WriteLine(result);
+int result = CountNum(mass);
+Console.WriteLine();
+
+Console.WriteLine($"Количество чисел, оканчивающихся на 1 и делящихся на 7: {result}");
+Console.WriteLine();
+

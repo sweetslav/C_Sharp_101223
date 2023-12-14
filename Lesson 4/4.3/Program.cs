@@ -1,5 +1,6 @@
-﻿// Задайте одномерный массив, заполненный случайными числами.
-// Определите количество простых чисел в этом массиве.
+﻿// Заполните массив на случайных чисел от 0 до 9. (вводится с консоли, но не более 8)
+// Сформируйте целое число, которое будет состоять из цифр из массива. 
+// Старший разряд числа находится на 0-м индексе, а маладший на последнем
 
 void Print(int[] arr)
 {
@@ -7,7 +8,7 @@ void Print(int[] arr)
 
     for (int i = 0; i < size; i++)
     {
-        Console.Write($"{arr[i]} ");        
+        Console.Write($"{arr[i]} ");
     }
     Console.WriteLine();
 }
@@ -23,31 +24,16 @@ int[] MassNums(int size, int from, int to)
     return arr;
 }
 
-bool isPrime(int number)
+long StringNum(int[] arr)
 {
-    if (number < 2)
-        return false;
-    
-    for (int i = 2; i <= Math.Sqrt(number); i++)
-    {
-        if (number % i == 0)
-            return false;
-    }
-    return true;
-}
-
-int SimpleNum(int[] arr)
-{
-    int count = 0;
+    string word = "";
 
     foreach (int number in arr)
     {
-        if (isPrime(number))
-            count++;
+        word += number;
     }
-    return count;
+    return long.Parse(word);
 }
-
 
 Console.WriteLine("Введите размер массива");
 int num = int.Parse(Console.ReadLine()!);
@@ -62,5 +48,6 @@ Console.WriteLine($"Ваш массив размером: {num} чисел. От
 Console.WriteLine();
 Print(mass);
 
-int result = SimpleNum(mass);
-Console.WriteLine(result);
+long result = StringNum(mass);
+Console.WriteLine();
+
