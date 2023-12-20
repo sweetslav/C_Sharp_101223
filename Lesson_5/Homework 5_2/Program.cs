@@ -49,6 +49,18 @@ void SwapArray(int[,] arr) // Замена строк в двумерном ма
     }
 }
 
+// void FirstLast(int[,] arr) // Эталонное решение
+// {
+//     int row_size = arr.GetLength(0);
+//     int column_size = arr.GetLength(1);
+
+//     for (int j = 0; j < column_size; j++)
+//     {
+//        (arr[0, j], arr[row_size - 1, j]) = (arr[row_size - 1, j], arr[0, j]) 
+//     }
+
+// }
+
 Console.Write("Enter the number of rows: ");
 int row_num = int.Parse(Console.ReadLine()!);
 
