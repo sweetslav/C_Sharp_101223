@@ -70,7 +70,7 @@ int[] SumNum(int[,] arr)
 {
     int row = arr.GetLength(0);
     int column = arr.GetLength(1);
-    int[] all_nums = new int[row]
+    int[] all_nums = new int[row];
 
     for (int i = 0; i < row; i++)
     {
@@ -82,21 +82,15 @@ int[] SumNum(int[,] arr)
     return all_nums;
 }
 
-void FindMin(int[] arr)
-{
-    int min_ind = 0;
+// void FindMin(int[] arr)
+// {
+//     int min_ind = 0;
 
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] < arr[min_ind] min_ind =i)
-    }
-}
-
-
-
-
-
-
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if (arr[i] < arr[min_ind] min_ind =i)
+//     }
+// }
 
 Console.Write("Enter the number of rows: "); // Вводим число строк
 int row_num = int.Parse(Console.ReadLine()!);
