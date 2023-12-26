@@ -66,21 +66,21 @@ int CalculateRowSum(int[,] arr, int rowIndex) // Метод вычисляет �
     return rowSum;
 }
 
-int[] SumNum(int[,] arr)
-{
-    int row = arr.GetLength(0);
-    int column = arr.GetLength(1);
-    int[] all_nums = new int[row];
+// int[] SumNum(int[,] arr)
+// {
+//     int row = arr.GetLength(0);
+//     int column = arr.GetLength(1);
+//     int[] all_nums = new int[row];
 
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < column; j++)
-        {
-            all_nums[i] += arr[i, j];
-        }
-    }
-    return all_nums;
-}
+//     for (int i = 0; i < row; i++)
+//     {
+//         for (int j = 0; j < column; j++)
+//         {
+//             all_nums[i] += arr[i, j];
+//         }
+//     }
+//     return all_nums;
+// }
 
 // void FindMin(int[] arr)
 // {
