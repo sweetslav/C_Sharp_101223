@@ -66,6 +66,38 @@ int CalculateRowSum(int[,] arr, int rowIndex) // Метод вычисляет �
     return rowSum;
 }
 
+int[] SumNum(int[,] arr)
+{
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
+    int[] all_nums = new int[row]
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            all_nums[i] += arr[i, j];
+        }
+    }
+    return all_nums;
+}
+
+void FindMin(int[] arr)
+{
+    int min_ind = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < arr[min_ind] min_ind =i)
+    }
+}
+
+
+
+
+
+
+
 Console.Write("Enter the number of rows: "); // Вводим число строк
 int row_num = int.Parse(Console.ReadLine()!);
 

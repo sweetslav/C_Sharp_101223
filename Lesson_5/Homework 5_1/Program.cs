@@ -43,6 +43,18 @@ int  SearcherArray(int[,] arr, int rowInd, int columnInd) // Поиск элем
         }
 }
 
+// string FindElement(int[,] arr, int f, int s) // Эталонное решение
+// {
+//     int row = arr.GetLength(0);
+//     int column = arr.GetLength(1); 
+
+//     if (f > rows || f <=0 || s > column || s <= 0)
+//         return $"{f}, {s} -> not in the array";
+//     return $"arr[{f}, {s}] = {arr[f -1, s - 1]} -> is in the array";
+// }
+
+
+
 Console.Write("Enter the number of rows: ");
 int row_num = int.Parse(Console.ReadLine()!);
 
